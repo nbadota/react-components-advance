@@ -1,0 +1,18 @@
+.btn {
+  border: 1px solid transparent;
+  font-weight: 400;
+  box-shadow: 0 3px 8px rgba($black, .3);
+  border-radius: .3rem;
+
+  &-default {
+    @include button-size(.375rem, .75rem, $font-size-base);
+  }
+
+  &-big {
+    @include button-size(.25rem, .5rem, $font-size-sm);
+  }
+
+  &-small {
+    @include button-size(.5rem, 1rem, $font-size-lg);
+  }
+}
