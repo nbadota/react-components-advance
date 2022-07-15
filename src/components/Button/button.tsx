@@ -1,8 +1,8 @@
 import React, {AnchorHTMLAttributes, ButtonHTMLAttributes, FC} from "react";
 import classNames from 'classnames';
 
-type ButtonSize = 'large' | 'default' | 'small';
-type ButtonType = 'warning' | 'dannger' | 'default' | 'link';
+export type ButtonSize = 'large' | 'medium' | 'small';
+export type ButtonType = 'warning' | 'dannger' | 'default' | 'link';
 
 interface BaseButtonProps {
   className?: string;
@@ -40,13 +40,13 @@ export const Button: FC<ButtonProps>  = (props) => {
     >
       {children}
     </button>
-  }
+  } 
 }
 
 Button.defaultProps = {
   disabled: false,
   btnType: 'default',
-  size: 'default',
+  size: 'medium',
 }
 
 export default Button;

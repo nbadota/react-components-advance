@@ -1,18 +1,63 @@
 .btn {
-  border: 1px solid transparent;
-  font-weight: 400;
-  box-shadow: 0 3px 8px rgba($black, .3);
-  border-radius: .3rem;
 
-  &-default {
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    display: inline-block;
+    border: 1px solid transparent;
+    font-weight: 400;
+    box-shadow: 0 5px 10px rgba($black, .2);
+    border-radius: .3rem;
+    background-color: $primary;
+    color: $white;
+    text-decoration: none;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: lighten($primary, 5%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba($black, .2);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba($black, .2);
+  }
+
+  &.disabled,
+  &[disabled] {
+
+    &,
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus,
+    &:link {
+      cursor: not-allowed;
+      background-color: $primary;
+      opacity: $btn-disabled-opacity;
+      transform: translate(0);
+      box-shadow: 0 5px 10px rgba($black, .2);
+
+      >* {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &-medium {
     @include button-size(.375rem, .75rem, $font-size-base);
   }
 
-  &-big {
-    @include button-size(.25rem, .5rem, $font-size-sm);
+  &-large {
+    @include button-size(.5rem, 1rem, $font-size-lg);
   }
 
   &-small {
-    @include button-size(.5rem, 1rem, $font-size-lg);
+    @include button-size(.25rem, .5rem, $font-size-sm);
   }
 }
